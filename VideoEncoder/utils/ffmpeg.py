@@ -54,7 +54,7 @@ async def encode(filepath):
     codec = '-c:v copy -s 1200x720 -pix_fmt yuv420p'
 
     # CRF
-    crf = f'-crf {c}'
+    crf = f'-crf {28}'
 
     # Preset
     if p == 'uf':
@@ -93,10 +93,10 @@ async def encode(filepath):
             audio_opts += ' -c:a copy'
 
     # Resolution
-    if r == '1200x720':
-        resolution = ''
+    if r == '1280x720':
+        resolution = '720p'
     elif r == '720':
-        resolution = '-vf scale=1200:-2'
+        resolution = '-vf scale=1280:-2'
     elif r == '720':
         resolution = '-vf scale=1280:-2'
     elif r == '480':
