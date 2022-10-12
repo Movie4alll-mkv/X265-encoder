@@ -51,7 +51,7 @@ async def encode(filepath):
         print('[Encode]: ' + filepath)
 
     # Codec and Bits
-    codec = '-c:v copy -pix_fmt yuv420p'
+    codec = '-c:v copy -s 1200x720 -pix_fmt yuv420p'
 
     # CRF
     crf = f'-crf {c}'
