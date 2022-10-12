@@ -51,7 +51,7 @@ async def encode(filepath):
         print('[Encode]: ' + filepath)
 
     # Codec and Bits
-    codec = "-c:v libx264  -metadata 'title=Encoded By (https://t.me/Animedualaudiozippercartoonist)' -metadata:s:v title="@animecolony" -metadata:s:a title="@animecolony" -metadata:s:s title="@animecolony" -pix_fmt yuv420p -vf "[in] drawtext=fontfile=arial.ttf: fontsize=24:fontcolor=white: x=(w-text_w)/23: y=h/28: text='@animecolony': enable='between (t,500,600)' , drawtext=fontfile=arial.ttf: fontsize=24:fontcolor=white: x=(w-text_w)/32: y=h/5: text='Brought to you by @animedualaudiozippercartoonist': enable='between (t,180,190)' , drawtext=text=This Anime is Downloaded from @animecolony Telegram  Channel t.me/AnimeColony :fontfile=foo.ttf:y=h/34:x=w-(t-1000)*w/5.5: fontcolor=white:fontsize=24:shadowx=2:shadowy=2""
+    codec = "-c:v libx264  -metadata 'title=Encoded By (https://t.me/Animedualaudiozippercartoonist)' -metadata:s:v title="@animecolony" -metadata:s:a title="@animecolony" -metadata:s:s title="@animecolony" -pix_fmt yuv420p -vf "[in] drawtext=fontfile=arial.ttf: fontsize=24:fontcolor=white: x=(w-text_w)/23: y=h/28: text='@animecolony': enable='between (t,500,600)' , drawtext=fontfile=arial.ttf: fontsize=24:fontcolor=white: x=(w-text_w)/32: y=h/5: text='Brought to you by @animedualaudiozippercartoonist': enable='between (t,180,190)""
 
     # CRF
     crf = f'-crf {c}'
