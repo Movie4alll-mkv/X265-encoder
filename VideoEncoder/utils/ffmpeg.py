@@ -57,7 +57,7 @@ async def encode(filepath):
     crf = f'-crf {c}'
 
     # Preset
-    if p == 'uf':
+    if p == 'f':
         preset = '-preset fast'
     elif p == 'sf':
         preset = '-preset fast'
@@ -93,7 +93,7 @@ async def encode(filepath):
             audio_opts += ' -c:a copy'
 
     # Resolution
-    if r == 'Source':
+    if r == '720':
         resolution = ''
     elif r == '720':
         resolution = '-vf scale=1200:-2'
