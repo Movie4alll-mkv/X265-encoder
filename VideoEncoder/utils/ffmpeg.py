@@ -94,7 +94,7 @@ async def encode(filepath):
 
     # Resolution
     if r == 'Source':
-        resolution = '720'
+        resolution = ''
     elif r == '1080':
         resolution = '-vf scale=1920:-2'
     elif r == '720':
