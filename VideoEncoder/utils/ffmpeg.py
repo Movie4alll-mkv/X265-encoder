@@ -28,7 +28,7 @@ from .. import audio
 from .. import crf
 from .. import encode_dir
 from .. import preset as p
-from .. import resolution
+from .. import resolution as r
 from .. import tune as t
 
 
