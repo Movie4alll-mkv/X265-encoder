@@ -54,7 +54,7 @@ async def encode(filepath):
     codec = '-c:v copy -s 1200x720 -pix_fmt yuv420p'
 
     # CRF
-    crf = f'-crf {28}'
+    crf = f'-crf {c}'
 
     # Preset
     if p == 'uf':
@@ -94,7 +94,7 @@ async def encode(filepath):
 
     # Resolution
     if r == '1280x720':
-        resolution = '720p'
+        resolution = ''
     elif r == '720':
         resolution = '-vf scale=1280:-2'
     elif r == '720':
