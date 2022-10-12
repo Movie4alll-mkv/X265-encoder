@@ -93,8 +93,8 @@ async def encode(filepath):
             audio_opts += ' -c:a copy'
 
     # Resolution
-    if r == '1280x720':
-        resolution = '1280x720'
+    if r == 'Source':
+        resolution = '720'
     elif r == '720':
         resolution = '-vf scale=1280:-2'
     elif r == '720':
