@@ -104,7 +104,7 @@ async def encode(filepath):
     elif r == '360p':
         resolution = '-vf scale=360:-2'
     else:
-        resolution = ''
+        resolution = '720'
 
     finish = '-threads 8'
 
