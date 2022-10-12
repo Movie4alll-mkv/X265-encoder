@@ -51,7 +51,7 @@ async def encode(filepath):
         print('[Encode]: ' + filepath)
 
     # Codec and Bits
-    codec = "-c:v libx264  -metadata 'title=Encoded By (https://t.me/Animedualaudiozippercartoonist)' -metadata:s:v title="@animecolony" -metadata:s:a title="@animecolony" -metadata:s:s title="@animecolony" -pix_fmt yuv420p"
+    codec = '-c:v libx264  -metadata 'title=Encoded By (https://t.me/Animedualaudiozippercartoonist)' -metadata:s:v title="@animecolony" -metadata:s:a title="@animecolony" -metadata:s:s title="@animecolony" -pix_fmt yuv420p"'
 
     # CRF
     crf = f'-crf {c}'
