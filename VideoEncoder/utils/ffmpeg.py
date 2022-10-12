@@ -51,15 +51,22 @@ async def encode(filepath):
         print('[Encode]: ' + filepath)
 
     # Codec and Bits
-    codec = '-c:v copy -pix_fmt yuv420p'
+    codec = '-c:v libx265 -s 1200x720 -pix_fmt yuv420p -crf 25'
 
     # CRF
-    crf = f'-crf {25}'
+    crf = f'-crf {c}'
 
     # Preset
-    if p == 'f':
+    if p == 'uf':
+        preset = '-preset ultrafast'
+    elif p == 'sf':
+        preset = '-preset superfast'
+    elif p == 'vf':
+        preset = '-preset veryfast'
+    elif p == 'f':
         preset = '-preset fast'
-    
+    elif p == 'm':
+        preset = '-preset medium'
 
     # Optional
     video_opts = f'-tune {t} -map 0:v? -map_chapters 0 -map_metadata 0'
@@ -81,14 +88,24 @@ async def encode(filepath):
         if a == 'aac':
             audio_opts += ' -c:a aac -b:a 128k'
         elif a == 'opus':
-            audio_opts += ' -c:a copy -vbr on -b:a 96k'
+            audio_opts += ' -c:a libopus -vbr on -b:a 96k'
         elif a == 'copy':
             audio_opts += ' -c:a copy'
 
     # Resolution
-    if r == '720':
-        resolution = '720p'
-    
+    if r == 'Source':
+        resolution = ''
+    elif r == '1080':
+        resolution = '-vf scale=1920:-2'
+    elif r == '720':
+        resolution = '-vf scale=1280:-2'
+    elif r == '480':
+        resolution = '-vf scale=720:-2'
+    elif r == '360':
+        resolution = '-vf scale=360:-2'
+    else:
+        resolution = ''
+
     finish = '-threads 8'
 
     # Finally
