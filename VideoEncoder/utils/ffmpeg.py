@@ -59,9 +59,9 @@ async def encode(filepath):
     # Preset
     if p == 'f':
         preset = '-preset fast'
-    elif p == 'sf':
+    elif p == 'f':
         preset = '-preset fast'
-    elif p == 'vf':
+    elif p == 'f':
         preset = '-preset fast'
     elif p == 'f':
         preset = '-preset fast'
@@ -94,7 +94,7 @@ async def encode(filepath):
 
     # Resolution
     if r == '720':
-        resolution = ''
+        resolution = '720p'
     elif r == '720':
         resolution = '-vf scale=1200:-2'
     elif r == '720':
