@@ -51,7 +51,7 @@ async def encode(filepath):
         print('[Encode]: ' + filepath)
 
     # Codec and Bits
-    codec = "-c:v libx264  -metadata 'title=Encoded By (https://t.me/Animedualaudiozippercartoonist)' -metadata:s:v title="@animecolony" -metadata:s:a title="@animecolony" -metadata:s:s title="@animecolony" -pix_fmt yuv420p -vf "[in] drawtext=fontfile=arial.ttf: fontsize=24:fontcolor=white: x=(w-text_w)/23: y=h/28: text='@animecolony': enable='between (t,500,600)'"
+    codec = "-c:v libx264  -metadata 'title=Encoded By (https://t.me/Animedualaudiozippercartoonist)' -metadata:s:v title="@animecolony" -metadata:s:a title="@animecolony" -metadata:s:s title="@animecolony" -pix_fmt yuv420p"
 
     # CRF
     crf = f'-crf {c}'
