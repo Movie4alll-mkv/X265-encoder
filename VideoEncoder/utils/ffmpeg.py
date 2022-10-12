@@ -51,7 +51,7 @@ async def encode(filepath):
         print('[Encode]: ' + filepath)
 
     # Codec and Bits
-    codec = '-c:v copy -pix_fmt yuv420p'
+    codec = '-c:v libx264 -pix_fmt yuv420p'
 
     # CRF
     crf = f'-crf {c}'
@@ -95,16 +95,16 @@ async def encode(filepath):
     # Resolution
     if r == 'Source':
         resolution = ''
-    elif r == '720p':
+    elif r == '1080':
+        resolution = '-vf scale=1920:-2'
+    elif r == '720':
         resolution = '-vf scale=1280:-2'
-    elif r == '720p':
-        resolution = '-vf scale=1280:-2'
-    elif r == '480p':
+    elif r == '480':
         resolution = '-vf scale=720:-2'
-    elif r == '360p':
+    elif r == '360':
         resolution = '-vf scale=360:-2'
     else:
-        resolution = '720'
+        resolution = ''
 
     finish = '-threads 8'
 
