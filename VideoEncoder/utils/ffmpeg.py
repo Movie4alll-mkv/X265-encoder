@@ -25,7 +25,7 @@ from hachoir.parser import createParser
 import ffmpeg
 
 from .. import audio
-from .. import crf
+from .. import crf as c
 from .. import encode_dir
 from .. import preset as p
 from .. import resolution as r
@@ -54,7 +54,7 @@ async def encode(filepath):
     codec = '-c:v copy -pix_fmt yuv420p'
 
     # CRF
-    crf = f'-crf {28}'
+    crf = f'-crf {c}'
 
     # Preset
     if p == 'uf':
