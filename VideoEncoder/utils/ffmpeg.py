@@ -25,10 +25,10 @@ from hachoir.parser import createParser
 import ffmpeg
 
 from .. import audio
-from .. import crf as c
+from .. import crf
 from .. import encode_dir
 from .. import preset as p
-from .. import resolution as r
+from .. import resolution
 from .. import tune as t
 
 
@@ -51,10 +51,10 @@ async def encode(filepath):
         print('[Encode]: ' + filepath)
 
     # Codec and Bits
-    codec = '-c:v copy -s 1200x720 -pix_fmt yuv420p'
+    codec = '-c:v copy -pix_fmt yuv420p'
 
     # CRF
-    crf = f'-crf {c}'
+    crf = f'-crf {26}'
 
     # Preset
     if p == 'uf':
@@ -93,19 +93,9 @@ async def encode(filepath):
             audio_opts += ' -c:a copy'
 
     # Resolution
-    if r == 'Source':
-        resolution = ''
-    elif r == '1080':
-        resolution = '-vf scale=1280:-2'
-    elif r == '720':
-        resolution = '-vf scale=860:-2'
-    elif r == '480':
-        resolution = '-vf scale=720:-2'
-    elif r == '360':
-        resolution = '-vf scale=360:-2'
-    else:
-        resolution = ''
-
+     r == '720':
+        resolution = '-vf scale=1280'
+    
     finish = '-threads 8'
 
     # Finally
