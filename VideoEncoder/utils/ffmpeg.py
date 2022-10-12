@@ -94,7 +94,7 @@ async def encode(filepath):
 
     # Resolution
     if resolution == '720':
-        resolution = '-vf scale=1280'
+        resolution == '-vf scale=1280:-2'
     
     finish = '-threads 8'
 
