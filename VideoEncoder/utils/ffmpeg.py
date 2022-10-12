@@ -51,18 +51,18 @@ async def encode(filepath):
         print('[Encode]: ' + filepath)
 
     # Codec and Bits
-    codec = '-c:v libx264 -pix_fmt yuv420p'
+    codec = '-c:v copy -pix_fmt yuv420p'
 
     # CRF
     crf = f'-crf {c}'
 
     # Preset
     if p == 'uf':
-        preset = '-preset ultrafast'
+        preset = '-preset fast'
     elif p == 'sf':
-        preset = '-preset superfast'
+        preset = '-preset fast'
     elif p == 'vf':
-        preset = '-preset veryfast'
+        preset = '-preset fast'
     elif p == 'f':
         preset = '-preset fast'
     elif p == 'm':
@@ -88,17 +88,17 @@ async def encode(filepath):
         if a == 'aac':
             audio_opts += ' -c:a aac -b:a 128k'
         elif a == 'opus':
-            audio_opts += ' -c:a libopus -vbr on -b:a 96k'
+            audio_opts += ' -c:a copy -vbr on -b:a 96k'
         elif a == 'copy':
             audio_opts += ' -c:a copy'
 
     # Resolution
     if r == 'Source':
         resolution = ''
-    elif r == '1080':
-        resolution = '-vf scale=1920:-2'
     elif r == '720':
-        resolution = '-vf scale=1280:-2'
+        resolution = '-vf scale=1200:-2'
+    elif r == '720':
+        resolution = '-vf scale=1200:-2'
     elif r == '480':
         resolution = '-vf scale=720:-2'
     elif r == '360':
